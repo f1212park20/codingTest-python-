@@ -1,0 +1,29 @@
+첫째 줄에 A와 B가 주어진다. A와 B는 공백 한 칸으로 구분되어져 있다.
+#첫째 줄에 다음 세 가지 중 하나를 출력한다.
+#A가 B보다 큰 경우에는 '>'를 출력한다.
+#A가 B보다 작은 경우에는 '<'를 출력한다.
+#A와 B가 같은 경우에는 '=='를 출력한다.
+#제한시간 1초
+
+1.a,b를 문자 형태로 입력받고 숫자형태로 변환
+a,b = input(). split()
+a=int(a)
+b=int(b)
+
+
+if  a>b:
+    print('>')
+elif a< b:
+    print('<')
+elif a==b:
+    print('==')
+
+2.map를 이용해 입력 받음
+a,b =map(int,input(). split())
+
+if  a>b:
+    print('>')
+elif a< b:
+    print('<')
+elif a==b:
+    print('==')
