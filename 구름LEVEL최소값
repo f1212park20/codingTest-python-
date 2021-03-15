@@ -1,0 +1,14 @@
+#최소값
+
+n=int(input())
+b=list(map(int, input().split()))
+print(min(b))
+
+3
+1 2 3
+결과1
+
+다른코드 대입(최대값)
+n=int(input())
+b=list(map(int, input().split()))
+print(max(b))
