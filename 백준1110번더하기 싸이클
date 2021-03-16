@@ -1,0 +1,19 @@
+#더하기 사이클
+num = temp = int(input())#26입력
+count=0
+while True:
+    ten=num//10#2
+    one=num%10#4
+    total=ten+one#2+6=8
+    count+=1
+    num=int(str(num%10)+str(total%10))#6+8=1|4
+    if(temp==num):
+        break
+print(count)    
+
+#풀이과정
+2+6=0|8 count 1
+6+8=1|4 count 2
+8+4=1|2 count 3
+4+2=0|6 count 4
+count=4
