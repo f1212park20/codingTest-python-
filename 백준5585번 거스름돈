@@ -1,0 +1,12 @@
+# 거스름돈
+#제출할 출력 파일은 1행으로만 되어 있다. 잔돈에 포함된 매수를 출력하시오
+
+n = 1000-int(input())
+count = 0
+coin_type = [500,100,50,10,5,1]
+
+for i in  coin_type:
+    count += n//i#1,0
+    n=n%i#나머지값 계산
+
+print(count)
