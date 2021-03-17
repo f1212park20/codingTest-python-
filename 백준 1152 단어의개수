@@ -1,0 +1,6 @@
+1.두줄로 구성
+word=input().split()
+print(len(word))
+
+2.한줄로 구성
+print(len(input().split()))
