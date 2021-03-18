@@ -1,0 +1,8 @@
+a = int(input())
+b = int(input())
+c = int(input())
+
+result = list(str(a * b * c))#입력 받은 값을 문자형으로 변환
+for i in range(10):
+    print(result.count(str(i)))# 문자의 개수를 count 함수를 이용해 출력
+    
