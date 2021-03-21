@@ -1,0 +1,16 @@
+C = int(input())# 반복할 횟수인 테스트케이스 C를 입력 받는다
+
+for i in range(C):
+    score = list(map(int, input().split()))
+    #각 케이스 마다 학생수와 학생의 점수를 받는데 이 모두를 score라는 list에 다 받는다.
+    cnt =0#cnt는 나중에 각 테스트케이스에서의 평균을 넘는 학생의 수
+    if score[0] == len(score)-1:
+    #score[0]의 학생수의 값과 입력받은 학생 점수들의 개수가 같으면 aver(평균값)을 계산해서 진행
+        aver = (sum(score)-score[0]) / score[0]
+    
+    for j in range(1,len(score)):
+    #평균값 점수 보다 더 큰 점수의 학생수가 몇명인지 판별하는 부분이다.
+        if aver < score[j]:
+        # aver와 비교를 통해 더 큰 점수인 학생들의 수를 cnt에 더해나간다.
+            cnt +=1
+    print('%0.3f%%'%((cnt/score[0])*100))
