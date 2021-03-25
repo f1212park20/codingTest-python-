@@ -1,0 +1,13 @@
+natural_num=set(range(1,10001))#set을 이용하여1,1001까지 변수를 출력
+generated_num=set()#생성될 숫자의 변수
+
+for  i in range(1,10001):#i=850
+    for j  in str(i):#j=8,5,0,문자열로 변환
+        i+=int(j)#850+8+5+0=869
+    generated_num .add(i)#생성자가 있는 숫자
+
+
+self_num=sorted(natural_num-generated_num)#셀프넘버 구하기
+for i in self_num:
+    print(i)#출력
+        
