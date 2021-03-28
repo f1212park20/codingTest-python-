@@ -1,0 +1,9 @@
+T=int(input())#개수를 입력
+
+for i in range(T):
+    R,S=input().split()#T값대로 반복 출력
+    R=int(R)#숫자로변환
+    S=str(S)#문자로변환
+    for i in range(len(S)):
+        print(R*S[i],end='')#숫자*문자=숫자대로 반복
+    print()  
