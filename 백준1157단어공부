@@ -1,0 +1,12 @@
+word=input().lower()#입력 받은 값을  소문자로 변환
+word_list=list(set(word))#리스트에서 중복된 값 제거
+cnt=[]
+
+for i in word_list:
+    count=word.count(i)#단어를 하나하나 분리
+    cnt.append(count)#cnt에 추가
+
+if cnt.count(max(cnt))>=2:#중복된 단어가 많으면 ?출력
+    print("?")
+else:#단어출력
+    print(word_list[(cnt.index(max(cnt)))].upper())
