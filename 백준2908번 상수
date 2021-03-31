@@ -1,0 +1,11 @@
+a,b=input().split()
+
+a=int(a[::-1])#문자 뒤집기
+b=int(b[::-1])#문자 뒤집기
+
+if a>b:
+    print(a)
+else:
+    print(b)
+    
+#a[::-1]-맨끝에서 부터 출력
