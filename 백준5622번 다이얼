@@ -1,0 +1,9 @@
+alphabet=input().lower()#소문자로 문자 받기
+dial=["abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"]#적혀있는 소문자를 리스트로 만든다
+time=0#변수를 0으로 설정
+
+for i in range(len(alphabet)):#len만큼 i 만큼 반복
+    for j in  dial:#dial에 있는 문자열을  하나하나를 j반복
+        if alphabet[i] in j:#alphabet이 j의 문자열에 해당
+            time+=dial.index(j)+3
+print(time)   
