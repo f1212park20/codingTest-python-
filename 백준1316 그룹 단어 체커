@@ -1,23 +1,8 @@
-#백준1316문제
-#알파벳 인덱스:'aaa'(1개)
-group=int(input())
-cnt=0#그룹 단어 개수
-texts=[input().lower() for _ in range(group)]#테이스 케이스 
+n=int(input())
+c=0
 
-for text in texts:
-    result=0#그룹 단어 인지 판별
-    for i in range(len(text)):
-        #같은 문자보다 인덱스 간격이 1보다 크면
-        if text.find(text[i],i+1)-1>1:
-            result=-1
-            break
-        else:
-            result=1
-     if  result==1:
-         cnt+=1
-     else:
-         continue
-            
-
-#'abcd'처럼  연속된 문자-> find를 통해 1보다 크다
-#
+for i in range(n):
+    a=input()
+    if list(a)==sorted(a,key=a.find):#a.find는 a에서 찾는 문자 순서대로 나열
+        c+=1
+print(c)        
