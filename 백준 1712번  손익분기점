@@ -1,0 +1,5 @@
+A,B,C=map(int,input().split())
+if  B>=C:#손익분기점이 넘지 않았을때 -1출력
+    print(-1)
+else:
+    print(int(A/(C-B))+1)
