@@ -1,0 +1,20 @@
+N=int(input())#13
+first=1
+plus=6
+room=1
+if N==1:
+    print(1)
+    
+else:
+    while True:
+        first+=plus
+        room+=1
+        if N<=first:#13<=7(x),13<=13()
+            print(room)#3출력
+            break
+        plus+=6
+        
+        
+ first+=plus#1+6=7,7+6=13
+ room+=1#1+1=2,2+1=3
+ 
