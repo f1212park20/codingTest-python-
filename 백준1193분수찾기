@@ -1,0 +1,22 @@
+#분수찾기
+num = int(input())#14입력
+start=1#각줄의 마지막분수 의 x번째의 수를 의미
+up=2#다음줄의 규칙을 형성하는 분수의 개수,3줄의 규칙을 형셩하는 분수는 3개
+
+if  num==1:#1번 분수는 규칙에서 제외
+    print("%d/%d"%(1,1))
+    exit()#출력후 종료
+while(True):
+    start=start+up#각줄의 마지막분수 의 x번째의 수를 의미.2/1이면   start=6 up=3
+    if num>start:#num(5)>start(3)
+        up+=1#3번 증가
+    else:
+        break
+
+num=start-num
+
+if up % 2==0:#up=3
+    print("%d/%d"%(up-num,1+num))
+else:
+    print("%d/%d"%(1+num, up-num))
+    
