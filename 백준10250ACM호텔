@@ -1,0 +1,25 @@
+#백준 ACM호텔
+t=int(input())
+
+#손님이 방문한 순서 N번째와 객실 호수의 규칙성을 코드로 작성한다
+for i in range(t):
+    h,w,n=map(int, input().split())
+    num=n//h+1#방 번호는 num으로,
+    floor=n%h#객실의 층은 floor,
+    # 입력받는 n이 호텔 층수를 나타내는 h의 배수인 경우는 다른 코드를 작성한다.
+    if n % h==0:#
+        num=n//h
+        floor=h
+    print(f'{floor*100+num}')    
+    
+    
+#t=2
+#2번 입력 받는다(for문)
+6(h) 12(w) 10(n)
+
+num=n//h+1 #10//6+1=2
+floor=n%h#10%6=4
+
+#if문의 조건이 False(10%6==4)
+#print(f'{floor*100+num}') 조건으로 들어간다
+
