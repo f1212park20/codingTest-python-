@@ -1,0 +1,10 @@
+#파이썬은 표현범위가 넓다
+A,B=map(int,input().split())
+print(A+B)
+
+#자바는 int형으로 처리불가.BigInteger를 사용한 큰숫자 처리
+public static void main(String[] args) throws Exception{
+		// TODO Auto-generated method stub
+		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		String [] arr=br.readLine().split(" ");
+		System.out.println(new BigInteger(arr[0]).add(new BigInteger(arr[1])));
