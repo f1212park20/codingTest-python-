@@ -1,0 +1,19 @@
+a=int(input())
+b=int(input())
+
+c=[]
+for num in range(a,b+1):
+    error=0
+    if  num > 1:
+        for i in range(2,num):
+            if num % i==0:
+                error+=1
+                break
+        if error==0:
+            c.append(num)
+
+if len(c)>0:
+    print(sum(c))
+    print(min(c))
+else:
+    print(-1)
