@@ -1,0 +1,29 @@
+#소수구하기
+#시간초과 공식(2초의 제한시간으로  실패 한공식)
+a,b=map(int,input().split())
+
+for n in range(a,b+1):
+    for i in range(2,n):
+        if  n % i==0:
+            break
+    else:
+       print(n)
+       
+
+#에라토스테네스의 체란 간단히 설명하자면 일정 범위내 수열에서 배수들을 제거해 소수만 남기는 방법이다.
+#성공공식
+m,n=map(int, input().split())
+
+def isprime(m,n):
+    n+=1
+    prime=[True]*n
+    for i in range(2,int(n**0.5)+1):
+        if prime[i]:
+            for j in range(2*i,n,i):
+                prime[j]=False
+
+    for i  in range(m,n):
+        if i > 1 and prime[i]==True:
+            print(i)
+            
+isprime(m,n)        
