@@ -1,0 +1,30 @@
+#java8(java8로만 통과 가능)
+Scanner sc=new Scanner(System.in);
+		
+		long a=sc.nextInt();
+		long b=sc.nextInt();
+		long v=sc.nextInt();
+		
+		long day=(v-b)/(a-b);
+		if((v-b)%(a-b)!=0) {
+			day++;
+		}
+		System.out.println(day);
+
+#java11(백준에서 통과한 공식)
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		//br.readLine() 은 문자열로 데이터를 읽으며, 
+		//StringTokenizer 로 문자열 분리 후 해당 토큰을 꺼내서 쓸 때 int 형으로 쓰고자 한다면 Integer.parseInt()로 String 을 int 형으로 변환시켜준다
+
+		
+		int a= Integer.parseInt(st.nextToken());
+		int b = Integer.parseInt(st.nextToken());
+		int v = Integer.parseInt(st.nextToken());
+		
+		long day=(v-b)/(a-b);
+		if((v-b)%(a-b)!=0) {
+			day++;
+		}
+		System.out.println(day);
+    
