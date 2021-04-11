@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class 백준설탕배달 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		
+		int suger=sc.nextInt();
+		
+		int bag=0;
+		while (suger>=0) {
+			if(suger % 5==0) {
+				bag+=(suger/5);
+				System.out.println(bag);
+				break;
+			}
+			else {
+				suger-=3;
+				bag+=1;
+			}
+			if (suger<0) {
+				System.out.println("-1");
+				break;
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+
+	}
+
+}
