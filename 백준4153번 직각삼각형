@@ -1,0 +1,14 @@
+#피타고라스 정리
+# a**2 + b**2 = c**2
+while True:
+    nums=list(map(int,input().split()))
+    if sum(nums)==0:
+        break;#세수가 0이면 break
+    max_num=max(nums)
+    nums.remove(max_num)# 빗변의 길이는 직각삼각형 세변의 길이중 가장 길다.
+    #while문 중반부, 세 수중 가장 큰 수를 찾아 리스트에서 삭제한다
+    if nums[0]**2+nums[1]**2==max_num**2:
+        print('right')
+    else:
+        print("wrong")
+    
