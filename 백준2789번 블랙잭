@@ -1,0 +1,18 @@
+#불랙잭
+#인풋이 두 줄로 되어 있기 때문에 n,m을 첫째 줄에서 입력을 받고, cards로 둘째 줄에 입력을 받는다.
+#result와 length를 초기화하고
+#3중 반복문으로 cards의 합을 sum_value에 저장한다. 반복문의 범위가 저렇게 되는 이유는 반복 추출이 없게 뽑히기 때문이다.
+#문제에서 M보다 세 개의 카드의 합이 작아야하는 조건이 있기 때문에 if문을 사용하고, result에 이들의 최대값을 저장하고 출력한다.
+n,m=list(map(int,input().split(' ')))
+cards=list(map(int, input().split(' ')))
+
+result=0
+length=len(cards)
+
+for i in range(0, length):
+    for j in range(i+1, length):
+        for k in range(j+1, length):
+            sum_value=cards[i]+cards[j]+cards[k]
+            if  sum_value <= m:
+                result=max(result, sum_value)
+print(result)               
