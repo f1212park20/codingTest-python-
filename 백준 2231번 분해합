@@ -1,0 +1,10 @@
+N=int(input())#1.입려값 입력
+result=0#2.입력 값과 N값을 비교하기 위한 변수
+for i in range(1,N+1):
+    A=list(map(int, str(i)))#3.str함수를 통해 i의 각 자리수를 A리스트에 넣기
+    result=i+sum(A)#4.256(=245+2+4+5)
+    if result==N:##4값과 N 비교
+        print(i)
+        break
+    if i==N:#생성자 없으면 종료
+        print(0)
