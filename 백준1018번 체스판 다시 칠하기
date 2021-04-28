@@ -1,0 +1,36 @@
+#1018번
+#1. 먼저 N*M만큼의 보드를 받아온다.
+
+#2. 8*8로 잘라야 하기에, 행으로 i-7만큼, 열로 j-7만큼 고정시켜 줘야 한다. 이 방법이 아니고서는 인덱스 에러를 잡을 방법을 모르겠다.
+
+#3. 고정시키고 난 이후는, i,j에서 i+8까지, j+8까지 전부 반복하면서 알맞게 체크무늬로 칠해져 있는지 확인한다.
+
+#4. 흰색이 먼저인 경우와 검은색이 먼저있는 경우를 나누어서, 한번에 종합한 후, min()을 사용하여, 최소값을 알아낸다.
+N,M=map(int, input().split())#9,9입력
+board=list()
+for i in range(N):
+    board.append(input())
+repair=list()
+
+for i in range(N-7):#2
+    for j in range(M-7):#2,  2*2=4가지,N*M 보드에서 자를 수 있는 경우의 수는 N-i * M-j 가지가 된다.
+        first_W = 0
+        first_B = 0#이후에 흰색으로 시작한 경우, 검은색으로 시작한 경우의 값을 초기화 해 준 뒤,
+        for k in range(i,i+8):
+            for  l in range(j,j+8):
+                #( k + l ) %2 == 0을 사용했는데, 이 이유는, 행과 열의 인덱스의 합이 짝수인경우,
+                #일정한 한 색을 가지게 되고
+                #홀수인 경우에도, 다른 일정한 한 색을 가지게 된다.
+                if (k+l )%2==0:
+                    if board[k][l] != 'W':
+                        first_W = first_W+1
+                    if board[k][l] != 'B':
+                        first_B = first_B + 1
+                else:
+                    if board[k][l] != 'B':
+                        first_W = first_W+1
+                    if board[k][l] != 'W':
+                        first_B = first_B + 1
+        repair.append(first_W)
+        repair.append(first_B)
+print(min(repair))         
