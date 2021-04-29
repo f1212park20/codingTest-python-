@@ -1,0 +1,7 @@
+b=[]
+num=input()
+for each in num:
+    b.append(each)
+    int_li=sorted(b, reverse=True)#reverse=False 내림차순
+for i in int_li:
+    print(i,end="")
