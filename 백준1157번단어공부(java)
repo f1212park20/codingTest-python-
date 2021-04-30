@@ -1,0 +1,24 @@
+Scanner sc=new Scanner(System.in);
+		//string에 모두 대문자로 변환하여 저장해야한다.
+		String str=sc.nextLine().toUpperCase();
+		
+		//반복문에서 cnt라는 배열을 생성했다
+		int[] cnt=new int[26];
+		int max=0;
+		char result='?';
+		
+		for(int i=0;i<str.length();i++) {
+			// 이 배열에 각 알파벳이 문장에 몇개 있는지에 대해 count값을 저장하고s
+			cnt[str.charAt(i)-65]++;
+			//max값과 비교하여 가장 많이 포함하는 문자를 result에 담는다
+			if(max<cnt[str.charAt(i)-65]) {
+				max=cnt[str.charAt(i)-65];
+				result=str.charAt(i);
+			}
+			//2개의 알파벳의 max값이 같다면 '?' 물음표를 출력한다.
+			else if(max==cnt[str.charAt(i)-65]) {
+				result='?';
+			}
+		}
+		System.out.println(result);
+		sc.close();
