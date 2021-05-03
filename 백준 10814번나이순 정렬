@@ -1,0 +1,12 @@
+num=int(input())
+l=[]
+
+for _ in range(num):
+    age, name=map(str, input().split())
+    age=int(age)
+    l.append((age, name))#리스트에 나이와 이름을 튜플로 추가
+    
+l.sort(key=lambda a:(a[0]))
+
+for a in l:
+    print(a[0],a[1])
