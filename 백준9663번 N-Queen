@@ -1,0 +1,32 @@
+#1) N개의 퀸을 배치해야하므로 무조건 모든 행에 퀸이 들어가야한다.
+#2) 따라서 0열부터 N-1열까지 퀸을 놓는 방법을 for문을 통해 돌린다.
+#3) 유망한지(이전의 열로 인해 영향을 받는지) 검사하는 함수 adjacent를 통해 유망함수만을 걸러준다.
+#내 윗줄에 나와 겹치는 라인에 퀸이 있는가?
+
+#사실 adjacent 갈때마다 chess map(현재까지의 배치도, 이전 까지 모든 퀸의 경로와 겹치는 곳을 1로, 안겹치는 곳은 0으로 표시)
+def adjacent(x):
+    for i in range(x):
+        if row[x]==row[i] or abs(row[x]-row[i])==x-i:
+            return False
+    return True
+
+
+#한줄씩 재귀하며 DFS를 실행
+def dfs(x):
+    global result # 전역 변수 result로 사용하겠다고 설정
+
+    if  x==N:
+        result+=1
+
+    else:
+        for i in range(N):
+            row[x]=i
+            if adjacent(x):
+                dfs(x+1)
+
+
+N=int(input())
+row=[0]*N
+result=0
+dfs(0)
+print(result)
