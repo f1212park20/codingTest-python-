@@ -1,0 +1,19 @@
+#피보나치 함수
+#D[N] = D[N-1] + D[N-2]
+#2차원 배열을 사용하거나 튜플, 딕셔너리 등을 사용해도 괜찮을 것 같지만,
+#저는 그냥 Fibonacci(0) 호출 Fibonacci(1) 호출 횟수를 저장하는 리스트를 두 개 만들었습니다.
+testcase=int(input())
+
+dp0=[0 for _ in range(41)]
+dp1=[0 for _ in range(41)]
+
+dp0[0]=1
+dp1[1]=1
+
+for i in range(2,41):
+    dp0[i]=dp0[i-1]+dp0[i-2]
+    dp1[i]=dp1[i-1]+dp1[i-2]
+
+for i in range(testcase):
+    a=int(input())
+    print("%d %d"%(dp0[a],dp1[a]))
