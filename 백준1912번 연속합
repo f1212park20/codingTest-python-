@@ -1,0 +1,7 @@
+n=int(input())
+a=list(map(int,input().split()))
+
+for i in range(1,n):#1~9까지 리스트에 새로 초기화
+    a[i]=max(a[i],a[i-1]+a[i])#i=8,  a[8],a[8-1]+a[8]->(12,12+21=33)
+    
+print(max(a))#33
