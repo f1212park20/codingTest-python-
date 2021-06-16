@@ -1,0 +1,26 @@
+n=int(input())
+a=list(map(int, input().split()))
+reverse_a=a[::-1] # 감소하는 부분 수열의 길이를 구하기 위해 뒤집기
+
+
+# 수열에서 자기 자신을 포함
+dp_up=[1]*n# 증가하는 부분 수열의 최대 길이
+dp_down=[1]*n# 감소하는 부분 수열의 최대 길이
+dp_ans=[0]*n# 합산할 dp테이블
+
+for i in range(n):
+    for j in range(i):
+        # i보다 앞선 인덱스 value 값보다
+        # i인덱스의 value가 더 큰 경우 수열의 길이 수정
+        if a[j] < a[i]:
+            dp_up[i]=max(dp_up[j]+1, dp_up[i])
+        if reverse_a[j]< reverse_a[i]:
+            dp_down[i]=max(dp_down[j]+1, dp_down[i])
+
+for i in range(n):
+    # reverse는 수열을 뒤집어서 사용했으므로
+    # 합산할 때 이에 따른 인덱스값을 고려해줘야 한다.
+    dp_ans[i]=dp_up[i]+dp_down[n-i-1]
+
+# 각 dp에서 자기 자신을 포함했으므로 한 번 제거해줘야함
+print(max(dp_ans)-1)
