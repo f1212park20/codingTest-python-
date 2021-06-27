@@ -1,0 +1,18 @@
+#https://velog.io/@sch804/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EB%B0%B1%EC%A4%80-11399%EB%B2%88-ATM
+#사람수 입력받기
+n=int(input())
+#각 사람마다의 시간 입력받기
+time=list(map(int, input().split()))
+
+#시간정렬하기
+time.sort()
+#합산할 변수 초기화
+sum1=0
+#이전꺼 담을 변수 초기화
+prev=0
+#각 시간을 이전꺼에 더한것들을 합산하기
+for i in time:
+    prev+=i
+    sum1+=prev
+
+print(sum1)
