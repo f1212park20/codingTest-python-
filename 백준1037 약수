@@ -1,0 +1,5 @@
+n=int(input())#2
+a=list(map(int, input().split()))#4, 2
+a_max=max(a)#4
+a_min=min(a)#2
+print(a_max*a_min)#4*2=8
