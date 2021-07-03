@@ -1,0 +1,11 @@
+import sys
+from math import factorial
+
+input=sys.stdin.readline
+
+N,K=map(int, input().split())
+
+#nCr 구하는 공식
+result=factorial(N)//(factorial(K)*factorial(N-K))
+
+print(result % 10007)
