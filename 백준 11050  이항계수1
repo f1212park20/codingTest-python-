@@ -1,0 +1,13 @@
+import sys
+input=sys.stdin.readline
+
+N,K=map(int, input().split())
+
+#팩토리얼 함수
+def fact(N):
+    if N<=1:
+        return 1
+    return  N*fact(N-1)
+
+#nCr 구하는 공식
+print(fact(N)//(fact(K)*fact(N-K)))
