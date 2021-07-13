@@ -1,0 +1,16 @@
+#암기
+import sys
+input=sys.stdin.readline
+
+k=int(input())
+
+st=[]
+for _ in range(k):
+    num=int(input())
+    #num의 값이 0이면 pop()함수를 이용하여 마지막 값 제거
+    if num==0:
+        st.pop()
+    #그 외의 경우에는 append()함수를 이용하여 값 추가    
+    else:
+        st.append(num)
+print(sum(st))
