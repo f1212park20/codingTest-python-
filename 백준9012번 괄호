@@ -1,0 +1,22 @@
+a=int(input())
+for i in range(a):
+    #간단하게 괄호를 문자열로 입력받아 list로 만들어 준다.
+    b=input()
+    s=list(b)
+    sum=0
+    for i in s:
+        #여는괄호 ( 가 나오면 sum에 1을 더해주고
+        if i=='(':
+            sum+=1
+        #닫는괄호가 나오면 1을 빼준다.    
+        elif i==')':
+            sum-=1
+        #여기서 -1이 되면 NO를 출력해주고 for문을 빠져나온다.    
+        if sum < 0:
+            print('NO')
+            break
+    #sum이 0보다 크다면 NO를 출력해주고    
+    if sum > 0:
+        print('NO')
+    elif sum==0:
+        print('YES')
