@@ -1,0 +1,29 @@
+import sys
+input = sys.stdin.readline
+
+while 1:
+    #입력을 받는다
+    string=input().rstrip()
+    stack=[]
+    true_flag=1
+    for cha in string:
+        #우측 괄호인지(')', ']') 검사한다
+        #만약 우측 괄호라면 스택의 원소와 비교하여 괄호의 균형이 맞는지 검사한다.
+        if cha=='(' or cha=='[':
+            stack.append(cha)
+        elif cha==')':
+            if stack and stack[-1]=='(':
+                stack.pop()
+            else:
+                true_flag=0
+                break
+        elif  cha==']':
+            if stack and  stack[-1]=='[':
+                stack.pop()
+            else:
+                true_flag=0
+                break
+    #입력받은 문자열이 종료 문자 '.'라면 종료를, 아니라면 문제에서 원하는 출력을 수행한다     
+    if string=='.':
+        break
+    print("yes" if true_flag and not(stack) else "no")
