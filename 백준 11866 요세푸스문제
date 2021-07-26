@@ -18,6 +18,6 @@ while queue:
 
 print("<",end='')
 for i in range(len(answer)-1):
-    print("%d, "%answer[i], end=' ')
+    print("%d, "%answer[i], end='')
 print(answer[-1], end='')
-print(">")  
+print(">")   
